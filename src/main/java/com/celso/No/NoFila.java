@@ -1,14 +1,14 @@
 package com.celso.No;
 
-public class NoFila {
+public class NoFila<T> {
 
-    private Object object;
-    private NoFila refNoFila;
+    private T object;
+    private NoFila<T> refNoFila;
 
     public NoFila() {
     }
 
-    public NoFila(Object object) {
+    public NoFila(T object) {
         this.object = object;
         this.refNoFila = null;
     }
@@ -17,7 +17,7 @@ public class NoFila {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(T object) {
         this.object = object;
     }
 

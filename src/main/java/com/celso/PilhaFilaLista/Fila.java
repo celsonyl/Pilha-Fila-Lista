@@ -2,9 +2,9 @@ package com.celso.PilhaFilaLista;
 
 import com.celso.No.NoFila;
 
-public class Fila {
+public class Fila<T> {
 
-    private NoFila refNoFila;
+    private NoFila<T> refNoFila;
 
     public Fila() {
         refNoFila = null;
@@ -14,12 +14,13 @@ public class Fila {
         return refNoFila == null;
     }
 
-    public void enQueue(NoFila novoNo) {
+    public void enQueue(T obj) {
+        NoFila novoNo = new NoFila(obj);
         novoNo.setRefNoFila(refNoFila);
         refNoFila = novoNo;
     }
 
-    public NoFila firstNoFila() {
+    public T firstNoFila() {
         if (!this.isEmpty()) {
             NoFila primeiroNo = refNoFila;
 
@@ -30,12 +31,12 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo;
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
 
-    public NoFila deQueue() {
+    public T deQueue() {
         if (!this.isEmpty()) {
             NoFila primeiroNo = refNoFila;
             NoFila noAux = refNoFila;
@@ -49,7 +50,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo;
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
@@ -73,7 +74,6 @@ public class Fila {
         } else {
             text = new StringBuilder("null");
         }
-
         return text.toString();
     }
 }

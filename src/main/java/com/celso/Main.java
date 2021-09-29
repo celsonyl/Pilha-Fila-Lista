@@ -1,6 +1,5 @@
 package com.celso;
 
-import com.celso.No.NoFila;
 import com.celso.No.NoPilha;
 import com.celso.PilhaFilaLista.Fila;
 import com.celso.PilhaFilaLista.Pilha;
@@ -9,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        instanciaPilha();
-//        instanciaFila();
+        instanciaFila();
     }
 
     public static void instanciaPilha() {
@@ -29,11 +28,11 @@ public class Main {
     }
 
     public static void instanciaFila() {
-        Fila fila1 = new Fila();
-        fila1.enQueue(new NoFila("Primeiro"));
-        fila1.enQueue(new NoFila("Segundo"));
-        fila1.enQueue(new NoFila("Terceiro"));
-        fila1.enQueue(new NoFila("Quarto"));
+        Fila<String> fila1 = new Fila<>();
+        fila1.enQueue("Primeiro");
+        fila1.enQueue("Segundo");
+        fila1.enQueue("Terceiro");
+        fila1.enQueue("Quarto");
 
         System.out.println(fila1);
 
@@ -41,7 +40,7 @@ public class Main {
 
         System.out.println(fila1);
 
-        fila1.enQueue(new NoFila("Ultimo"));
+        fila1.enQueue("Ultimo");
 
         System.out.println(fila1);
 
