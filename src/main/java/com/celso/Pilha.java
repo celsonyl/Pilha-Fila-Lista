@@ -2,28 +2,28 @@ package com.celso;
 
 public class Pilha {
 
-    private No refNoPilha;
+    private NoPilha refNoPilha;
 
     public Pilha() {
         this.refNoPilha = null;
     }
 
-    public void push(No novoNo) {
-        No refAux = refNoPilha;
-        refNoPilha = novoNo;
+    public void push(NoPilha novoNoPilha) {
+        NoPilha refAux = refNoPilha;
+        refNoPilha = novoNoPilha;
         refNoPilha.setRef(refAux);
     }
 
-    public No pop() {
+    public NoPilha pop() {
         if (!this.isEmpty()) {
-            No noPoped = refNoPilha;
+            NoPilha noPilhaPoped = refNoPilha;
             refNoPilha = refNoPilha.getRef();
-            return noPoped;
+            return noPilhaPoped;
         }
         return null;
     }
 
-    public No top() {
+    public NoPilha top() {
         return refNoPilha;
     }
 
@@ -37,11 +37,11 @@ public class Pilha {
         stringRetono += "   Pilha\n";
         stringRetono += "----------\n";
 
-        No noAux = refNoPilha;
+        NoPilha noPilhaAux = refNoPilha;
         while (true) {
-            if (noAux != null) {
-                stringRetono += "[No {dados = " + noAux.getDado() + "}]\n";
-                noAux = noAux.getRef();
+            if (noPilhaAux != null) {
+                stringRetono += "[No {dados = " + noPilhaAux.getDado() + "}]\n";
+                noPilhaAux = noPilhaAux.getRef();
             } else {
                 break;
             }

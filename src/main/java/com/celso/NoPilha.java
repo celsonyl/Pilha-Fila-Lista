@@ -1,14 +1,14 @@
 package com.celso;
 
-public class No {
+public class NoPilha {
 
     private int dado;
-    private No ref = null;
+    private NoPilha ref = null;
 
-    public No() {
+    public NoPilha() {
     }
 
-    public No(int dado) {
+    public NoPilha(int dado) {
         this.dado = dado;
     }
 
@@ -20,11 +20,11 @@ public class No {
         this.dado = dado;
     }
 
-    public No getRef() {
+    public NoPilha getRef() {
         return ref;
     }
 
-    public void setRef(No ref) {
+    public void setRef(NoPilha ref) {
         this.ref = ref;
     }
 
