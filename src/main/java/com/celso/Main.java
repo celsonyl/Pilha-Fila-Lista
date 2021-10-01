@@ -2,6 +2,7 @@ package com.celso;
 
 import com.celso.No.NoPilha;
 import com.celso.PilhaFilaLista.Fila;
+import com.celso.PilhaFilaLista.ListaEncadeada;
 import com.celso.PilhaFilaLista.Pilha;
 
 public class Main {
@@ -9,6 +10,25 @@ public class Main {
     public static void main(String[] args) {
 //        instanciaPilha();
 //        instanciaFila();
+        instanciaListaEncadeada();
+    }
+
+    private static void instanciaListaEncadeada() {
+        ListaEncadeada<String> list1 = new ListaEncadeada<String>();
+        list1.addList("Oi");
+        list1.addList("Deu");
+        list1.addList("Certo");
+        list1.addList("?");
+        System.out.println(list1.get(0));
+        System.out.println(list1.get(1));
+        System.out.println(list1.get(2));
+        System.out.println(list1.get(3));
+
+        System.out.println(list1);
+
+        System.out.println(list1.removeNoList(0));
+
+        System.out.println(list1);
     }
 
     public static void instanciaPilha() {

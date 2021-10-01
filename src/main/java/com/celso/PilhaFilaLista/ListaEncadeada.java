@@ -39,6 +39,7 @@ public class ListaEncadeada<T> {
         NoLista<T> newNo = new NoLista<T>(conteudo);
         if (this.isEmpty()) {
             refEntrada = newNo;
+            return;
         }
 
         NoLista<T> noAux = refEntrada;
@@ -57,7 +58,7 @@ public class ListaEncadeada<T> {
         NoLista<T> noAux = refEntrada;
         NoLista<T> noReturn = null;
 
-        for (int i = 0; i < this.listSize() - 1; i++) {
+        for (int i = 0; i <= index; i++) {
             noReturn = noAux;
             noAux = noAux.getNoLista();
         }
@@ -79,5 +80,18 @@ public class ListaEncadeada<T> {
         NoLista<T> no = getNoList(index - 1);
         no.setNoLista(noRemove.getNoLista());
         return noRemove.getConteudo();
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        NoLista<T> noAux = refEntrada;
+        for (int i = 0; i < this.listSize(); i++) {
+            str += "ListaEncadeada { " + " conteudo = " + noAux.getConteudo() +
+                    " }";
+            noAux = noAux.getNoLista();
+        }
+        str += "->null";
+        return str;
     }
 }
