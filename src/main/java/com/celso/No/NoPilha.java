@@ -30,9 +30,7 @@ public class NoPilha {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("No{");
-        sb.append("dado=").append(dado);
-        sb.append('}');
-        return sb.toString();
+        return "No{" + "dado=" + dado +
+                '}';
     }
 }

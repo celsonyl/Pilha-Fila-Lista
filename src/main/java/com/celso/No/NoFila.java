@@ -32,9 +32,7 @@ public class NoFila<T> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("NoFila{");
-        sb.append("object=").append(object);
-        sb.append('}');
-        return sb.toString();
+        return "NoFila{" + "object=" + object +
+                '}';
     }
 }
