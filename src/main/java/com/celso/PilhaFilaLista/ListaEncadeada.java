@@ -63,4 +63,21 @@ public class ListaEncadeada<T> {
         }
         return noReturn;
     }
+
+    public T get(int index) {
+        return getNoList(index).getConteudo();
+    }
+
+    public T removeNoList(int index) {
+        NoLista<T> noRemove = this.getNoList(index);
+
+        if (index == 0) {
+            refEntrada = noRemove.getNoLista();
+            return noRemove.getConteudo();
+        }
+
+        NoLista<T> no = getNoList(index - 1);
+        no.setNoLista(noRemove.getNoLista());
+        return noRemove.getConteudo();
+    }
 }
