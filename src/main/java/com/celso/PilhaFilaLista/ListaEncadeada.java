@@ -47,4 +47,20 @@ public class ListaEncadeada<T> {
         }
         noAux.setNoLista(newNo);
     }
+
+    public NoLista<T> getNoList(int index) {
+        if (index >= this.listSize()) {
+            throw new IndexOutOfBoundsException("Tamanho passado é maior que a lista. Tamanho da Lista: " + this.listSize() +
+                    " Tamanho passado: " + index);
+        }
+
+        NoLista<T> noAux = refEntrada;
+        NoLista<T> noReturn = null;
+
+        for (int i = 0; i < this.listSize() - 1; i++) {
+            noReturn = noAux;
+            noAux = noAux.getNoLista();
+        }
+        return noReturn;
+    }
 }
