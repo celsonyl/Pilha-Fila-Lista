@@ -32,8 +32,19 @@ public class ListaEncadeada<T> {
                 break;
             }
         }
-
         return listSize;
     }
 
+    public void addList(T conteudo) {
+        NoLista<T> newNo = new NoLista<T>(conteudo);
+        if (this.isEmpty()) {
+            refEntrada = newNo;
+        }
+
+        NoLista<T> noAux = refEntrada;
+        for (int i = 0; i < this.listSize() - 1; i++) {
+            noAux = noAux.getNoLista();
+        }
+        noAux.setNoLista(newNo);
+    }
 }
