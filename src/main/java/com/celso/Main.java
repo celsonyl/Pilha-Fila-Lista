@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
 //        instanciaPilha();
 //        instanciaFila();
-        instanciaListaEncadeada();
+//        instanciaListaEncadeada();
     }
 
     private static void instanciaListaEncadeada() {
-        ListaEncadeada<String> list1 = new ListaEncadeada<String>();
+        ListaEncadeada<String> list1 = new ListaEncadeada<>();
         list1.addList("Oi");
         list1.addList("Deu");
         list1.addList("Certo");
