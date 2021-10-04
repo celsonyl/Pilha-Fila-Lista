@@ -2,6 +2,7 @@ package com.celso;
 
 import com.celso.No.NoPilha;
 import com.celso.PilhaFilaLista.Fila;
+import com.celso.PilhaFilaLista.ListaDuplamenteEncadeada;
 import com.celso.PilhaFilaLista.ListaEncadeada;
 import com.celso.PilhaFilaLista.Pilha;
 
@@ -11,6 +12,27 @@ public class Main {
 //        instanciaPilha();
 //        instanciaFila();
 //        instanciaListaEncadeada();
+        instanciaListaDuplamenteEncadeada();
+    }
+
+    private static void instanciaListaDuplamenteEncadeada() {
+        ListaDuplamenteEncadeada<String> list = new ListaDuplamenteEncadeada<>();
+        list.add("c1");
+        list.add("c2");
+        list.add("c3");
+        list.add("c4");
+        list.add("c5");
+        list.add("c6");
+        list.add("c7");
+
+        System.out.println(list);
+
+        list.remove(3);
+        list.add(3, "99");
+
+        System.out.println(list);
+
+        System.out.println(list.get(3));
     }
 
     private static void instanciaListaEncadeada() {
