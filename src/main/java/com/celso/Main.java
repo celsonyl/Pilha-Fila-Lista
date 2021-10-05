@@ -12,7 +12,7 @@ public class Main {
 //        instanciaPilha();
 //        instanciaFila();
 //        instanciaListaEncadeada();
-        instanciaListaDuplamenteEncadeada();
+//        instanciaListaDuplamenteEncadeada();
     }
 
     private static void instanciaListaDuplamenteEncadeada() {
