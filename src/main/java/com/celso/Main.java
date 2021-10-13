@@ -6,7 +6,7 @@ import com.celso.PilhaFilaListaArv.*;
 public class Main {
 
     public static void main(String[] args) {
-//        instanciaPilha();
+        instanciaPilha();
 //        instanciaFila();
 //        instanciaListaEncadeada();
 //        instanciaListaDuplamenteEncadeada();
