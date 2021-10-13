@@ -1,7 +1,7 @@
 package com.celso;
 
 import com.celso.No.NoPilha;
-import com.celso.PilhaFilaLista.*;
+import com.celso.PilhaFilaListaArv.*;
 
 public class Main {
 
@@ -10,7 +10,7 @@ public class Main {
 //        instanciaFila();
 //        instanciaListaEncadeada();
 //        instanciaListaDuplamenteEncadeada();
-        instanciaListaCircular();
+//        instanciaListaCircular();
     }
 
     private static void instanciaListaCircular() {
@@ -26,7 +26,7 @@ public class Main {
         System.out.println(list);
 
         list.remove(2);
-        
+
         System.out.println(list);
     }
 
