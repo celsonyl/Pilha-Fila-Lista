@@ -11,7 +11,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     }
 
     public void inserir(T conteudo) {
-        BinNo<T> novoNo = new BinNo<T>(conteudo);
+        BinNo<T> novoNo = new BinNo<>(conteudo);
         this.raiz = inserir(this.raiz, novoNo);
     }
 
@@ -26,4 +26,52 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 
         return atual;
     }
+
+
+    //------Exibir em Ordem---------------------------------------------------------
+    public void exibirEmOrdem() {
+        System.out.println("\n Exibindo em Order:");
+        exibirEmOrdem(this.raiz);
+    }
+
+    private void exibirEmOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            exibirEmOrdem(atual.getNoEsq());
+            System.out.println(atual.getConteudo() + ",");
+            exibirEmOrdem(atual.getNoDir());
+        }
+    }
+    //-------------------------------------------------------------------------------
+
+
+    //----Exibir Pós Ordem-----------------------------------------------------------
+    public void exibirPosOrdem() {
+        System.out.println("\n Exibindo Pós Order:");
+        exibirPosOrdem(this.raiz);
+    }
+
+    private void exibirPosOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            exibirPosOrdem(atual.getNoEsq());
+            exibirPosOrdem(atual.getNoDir());
+            System.out.println(atual.getConteudo() + ",");
+        }
+    }
+    //-------------------------------------------------------------------------------
+
+
+    //----Exibir Pré Ordem-----------------------------------------------------------
+    public void exibirPreOrdem() {
+        System.out.println("\n Exibindo Pós Order:");
+        exibirPreOrdem(this.raiz);
+    }
+
+    private void exibirPreOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            System.out.println(atual.getConteudo() + ",");
+            exibirPreOrdem(atual.getNoEsq());
+            exibirPreOrdem(atual.getNoDir());
+        }
+    }
+    //--------------------------------------------------------------------------------
 }
