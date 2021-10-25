@@ -27,7 +27,6 @@ public class ArvoreBinaria<T extends Comparable<T>> {
         return atual;
     }
 
-
     //------Exibir em Ordem---------------------------------------------------------
     public void exibirEmOrdem() {
         System.out.println("\n Exibindo em Order:");
@@ -42,7 +41,6 @@ public class ArvoreBinaria<T extends Comparable<T>> {
         }
     }
     //-------------------------------------------------------------------------------
-
 
     //----Exibir Pós Ordem-----------------------------------------------------------
     public void exibirPosOrdem() {
@@ -59,7 +57,6 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     }
     //-------------------------------------------------------------------------------
 
-
     //----Exibir Pré Ordem-----------------------------------------------------------
     public void exibirPreOrdem() {
         System.out.println("\n Exibindo Pós Order:");
@@ -74,4 +71,31 @@ public class ArvoreBinaria<T extends Comparable<T>> {
         }
     }
     //--------------------------------------------------------------------------------
+
+    public void remover(T conteudo) {
+        try {
+            BinNo<T> atual = this.raiz;
+            BinNo<T> pai = null;
+            BinNo<T> filho = null;
+            BinNo<T> temp = null;
+
+            while (atual != null && !atual.getConteudo().equals(conteudo)) {
+                pai = atual;
+
+                if (conteudo.compareTo(atual.getConteudo()) < 0) {
+                    atual = atual.getNoEsq();
+                } else {
+                    atual = atual.getNoDir();
+                }
+            }
+
+            if (atual == null) {
+                System.out.println("Conteudo não encontrado. IF");
+            }
+
+
+        } catch (NullPointerException exception) {
+            System.out.println("Conteudo não encontrado. Catch");
+        }
+    }
 }
